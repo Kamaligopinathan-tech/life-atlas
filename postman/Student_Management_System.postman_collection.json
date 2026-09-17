@@ -1,0 +1,252 @@
+{
+  "info": {
+    "_postman_id": "7f8b91a2-3c4d-4e5f-a6b7-8c9d0e1f2a3b",
+    "name": "Student Management System API (SOP Compliance)",
+    "description": "Complete REST API collection for Student Management System full-stack CRUD application.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000/api",
+      "type": "string"
+    },
+    {
+      "key": "studentId",
+      "value": "1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Students",
+      "item": [
+        {
+          "name": "1. List All Students (Read All)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""]
+            },
+            "description": "Fetches complete list of students. Returns 200 OK with array of records."
+          },
+          "response": []
+        },
+        {
+          "name": "2. Search Students by Keyword",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/?search=Aarav",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Aarav"
+                }
+              ]
+            },
+            "description": "Performs case-insensitive substring search across first_name, last_name, student_id, and email."
+          },
+          "response": []
+        },
+        {
+          "name": "3. Filter by Department",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/?department=Computer Science",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""],
+              "query": [
+                {
+                  "key": "department",
+                  "value": "Computer Science"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Filter by Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/?status=Active",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "Active"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Sort by GPA Descending",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/?ordering=-gpa",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""],
+              "query": [
+                {
+                  "key": "ordering",
+                  "value": "-gpa"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Retrieve Single Student (Read One)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/{{studentId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "{{studentId}}", ""]
+            },
+            "description": "Returns single student object by primary key. Returns 404 if not found."
+          },
+          "response": []
+        },
+        {
+          "name": "7. Create New Student (Create - Valid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"STU-2026-999\",\n  \"first_name\": \"Maya\",\n  \"last_name\": \"Lin\",\n  \"email\": \"maya.lin@university.edu\",\n  \"phone\": \"+1-555-0188\",\n  \"department\": \"Computer Science\",\n  \"enrollment_date\": \"2024-09-01\",\n  \"gpa\": \"3.91\",\n  \"status\": \"Active\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/students/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""]
+            },
+            "description": "Creates a new student record. Returns 201 Created."
+          },
+          "response": []
+        },
+        {
+          "name": "8. Create Student (Negative Test - Validation Errors)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"BAD\",\n  \"first_name\": \"\",\n  \"email\": \"invalid-email\",\n  \"gpa\": \"5.50\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/students/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", ""]
+            },
+            "description": "Validates server-side exception handling. Returns 400 Bad Request with field-level error details."
+          },
+          "response": []
+        },
+        {
+          "name": "9. Update Student Full (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"STU-2024-001\",\n  \"first_name\": \"Aarav\",\n  \"last_name\": \"Sharma\",\n  \"email\": \"aarav.sharma@university.edu\",\n  \"phone\": \"+1-555-0101\",\n  \"department\": \"Data Science\",\n  \"enrollment_date\": \"2024-08-15\",\n  \"gpa\": \"3.96\",\n  \"status\": \"Active\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/students/{{studentId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "{{studentId}}", ""]
+            },
+            "description": "Updates full student record. Returns 200 OK."
+          },
+          "response": []
+        },
+        {
+          "name": "10. Update Student Partial (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Graduated\",\n  \"gpa\": \"3.98\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/students/{{studentId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "{{studentId}}", ""]
+            },
+            "description": "Partially updates student fields. Returns 200 OK."
+          },
+          "response": []
+        },
+        {
+          "name": "11. Delete Student (Delete)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/{{studentId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "{{studentId}}", ""]
+            },
+            "description": "Deletes the record from database. Returns 204 No Content."
+          },
+          "response": []
+        },
+        {
+          "name": "12. Dashboard Analytics & Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/stats/",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "stats", ""]
+            },
+            "description": "Returns statistical summary including total count, active count, average GPA, and department distribution."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
