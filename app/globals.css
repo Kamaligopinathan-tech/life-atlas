@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 9 10 15;
+    --foreground: 243 244 248;
+  }
+
+  body {
+    background-color: #090a0f;
+    color: #f3f4f8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: #e2b170;
+    selection-color: #090a0f;
+  }
+
+  /* Custom subtle museum scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f1118;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #24293a;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #414a66;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(226, 177, 112, 0.4);
+  }
+  .box-glow {
+    box-shadow: 0 0 30px rgba(226, 177, 112, 0.15);
+  }
+}

@@ -1,30 +1,45 @@
-# Python & Virtual Environments
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Production & TypeScript
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Vercel
+.vercel/
+
+# Legacy archive & virtual environments
+_legacy_edutrack/
 .venv/
 env/
 venv/
-ENV/
 __pycache__/
-*.py[cod]
-*$py.class
-*.sqlite3-journal
 
-# Django
-local_settings.py
-db.sqlite3
-*.log
-
-# Node & Frontend
-node_modules/
-dist/
-dist-ssr/
-*.local
-.npm
-.eslintcache
-
-# IDE & OS
-.vscode/
+# IDEs and editors
 .idea/
+.vscode/
 *.swp
 *.swo
+
+# OS files
 .DS_Store
+*.pem
 Thumbs.db

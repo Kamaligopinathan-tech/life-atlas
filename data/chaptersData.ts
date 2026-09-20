@@ -1,0 +1,88 @@
+import { LifeChapter } from "@/types/receipts";
+
+export const LIFE_CHAPTERS: LifeChapter[] = [
+  {
+    id: "chapter_01",
+    number: "01",
+    title: "THE QUIET NIGHTS",
+    subtitle: "Nocturnal Isolation, Doubts & The Seeds of Change",
+    dateRange: "March 01 — March 31, 2024",
+    narrative:
+      "Your life was defined by interior rooms, low blue light, and solitary listening sessions between 1:00 AM and 4:00 AM. A gnawing exhaustion with screen-bound client work pushed you toward theoretical acoustic papers and the Atlantic shore. Out of this silent retreat emerged the first raw artistic manifesto.",
+    dominantCategories: ["note", "music", "search", "purchase"],
+    highlightReceiptIds: ["music_01", "note_01", "search_01", "place_01", "message_01", "purchase_02"],
+    keyInsight: "82% of creative notes were jotted between 11 PM and 3 AM immediately following ambient music sessions.",
+    quote: "Everything is too smooth. Screens offer no friction. Sound needs to occupy physical space again.",
+    statCallout: "18 Moments · 4 Midnight Notes · 1 Career Pivot",
+  },
+  {
+    id: "chapter_02",
+    number: "02",
+    title: "THE SPARK & SEARCH",
+    subtitle: "Crossing Borders, Acoustic Temples & A Fateful Encounter",
+    dateRange: "April 01 — April 28, 2024",
+    narrative:
+      "A quick flight to Berlin broke the Lisbon bubble. Walking through the massive historic timber halls of Funkhaus Berlin and attending late-night synth salons in Neukölln transformed solitary theory into an active collaborative quest. Over a napkin covered in ballpoint schematics at CODA, you met lighting designer Elena Rostova.",
+    dominantCategories: ["travel" as any, "place", "photo", "message", "event"],
+    highlightReceiptIds: ["purchase_03", "place_04", "note_04", "event_02", "message_04", "photo_05"],
+    keyInsight: "A 3-fold surge in interpersonal messages accompanied your shift from solitary reading to co-creation.",
+    quote: "Half a century of sonic history preserved in aged timber. We need to build something monumental.",
+    statCallout: "16 Moments · 2 Countries · First Co-Creator Partnership",
+  },
+  {
+    id: "chapter_03",
+    number: "03",
+    title: "NEW PLACES & COASTAL TRACES",
+    subtitle: "Atlantic Gale Waves, Dune Acoustics & The Abandoned Hall",
+    dateRange: "May 01 — May 31, 2024",
+    narrative:
+      "Armed with binaural microphones and heavy wind baffles, you took to Europe's westernmost cliffs at Cabo da Roca. Recording the sub-bass impact of 11.4-second ocean swell cycles gave you the natural biological rhythm for the installation. Back in Lisbon's Marvila district, you discovered Armazém 18B—a cathedral-like wine warehouse with an immaculate 2.8-second decay time.",
+    dominantCategories: ["place", "photo", "music", "note", "purchase"],
+    highlightReceiptIds: ["place_05", "photo_06", "note_06", "place_07", "photo_08", "event_03"],
+    keyInsight: "Ocean swell periodicity (11.4s) was discovered to mirror human resting breathing rates, becoming the master clock.",
+    quote: "Where the land ends and the sea begins: 45-knot wind gusts and sub-bass resonance.",
+    statCallout: "19 Moments · 3 Coastal Expeditions · 1 Venue Secured",
+  },
+  {
+    id: "chapter_04",
+    number: "04",
+    title: "THE SOCIAL CONVERGENCE",
+    subtitle: "Sardine Smoke, Midsummer Rooftops & Community Gravity",
+    dateRange: "June 01 — June 30, 2024",
+    narrative:
+      "Summer arrived in full force. The narrow cobblestone alleys of Alfama erupted in the Santos Populares festivals, reminding you that sound is fundamentally a collective human ritual. Between rooftop solstice feasts and ordering high-channel audio interfaces, your life gathered the emotional momentum required to brave the coming build.",
+    dominantCategories: ["event", "celebration" as any, "purchase", "message", "photo"],
+    highlightReceiptIds: ["event_04", "photo_09", "purchase_09", "purchase_10", "event_05", "photo_10"],
+    keyInsight: "Social dinner and gathering receipts peaked at 42% of total expenditure during the midsummer solstice.",
+    quote: "When 80 people sing in a narrow alley, the stone walls act as a waveguide. The crowd is the acoustic filter.",
+    statCallout: "15 Moments · 2 Festivals · 1 Rooftop Feast",
+  },
+  {
+    id: "chapter_05",
+    number: "05",
+    title: "THE CRUNCH & CREATION",
+    subtitle: "Warehouse Dust, Cable Harnesses & The Optical Breakthrough",
+    dateRange: "July 01 — July 31, 2024",
+    narrative:
+      "Elena landed in Lisbon with two Pelican cases of laser scanners. For four intense weeks, Armazém 18B became a workshop of chalk lines, aluminum extension ladders, and late-night pizza. An agonizing 14ms timing jitter between light and sound was solved with a dedicated local network switch, causing light and audio to suddenly strike as one living organism.",
+    dominantCategories: ["place", "note", "purchase", "search", "photo"],
+    highlightReceiptIds: ["place_09", "place_10", "note_10", "search_09", "note_11", "photo_12"],
+    keyInsight: "Debugging network jitter from 14ms down to 1.2ms transformed separate optical and sonic cues into a unified synesthetic experience.",
+    quote: "The green light looks like liquid glass floating 1.5 meters above the floor. We stood in silence for three minutes.",
+    statCallout: "22 Moments · 180m Cables Dressed · 1 Synesthetic Breakthrough",
+  },
+  {
+    id: "chapter_06",
+    number: "06",
+    title: "THE WEEK EVERYTHING CONNECTED",
+    subtitle: "Vernissage, 2,400 Visitors & The Midnight Overlook",
+    dateRange: "August 01 — August 28, 2024",
+    narrative:
+      "The doors of Armazém 18B opened to the city. Over ten days, thousands of visitors entered the darkness and fell silent beneath the pulsing green laser ring. On opening night at 3:10 AM, sitting on the stone parapet of Miradouro da Graça with warm pastéis de nata and a shared pair of earbuds, five months of fear, labor, and receipts condensed into pure, unalloyed gratitude.",
+    dominantCategories: ["event", "photo", "celebration" as any, "message", "note"],
+    highlightReceiptIds: ["event_07", "photo_13", "message_10", "place_12", "photo_14", "music_10", "note_14"],
+    keyInsight: "Unrelated receipts—a song, an overlook, a photo, an espresso purchase, and a message—formed the turning point of a lifetime.",
+    quote: "A life isn't lived in broad strokes; it is lived in micro-receipts. When you connect them, you see your soul taking shape.",
+    statCallout: "21 Moments · 2,480 Visitors · 1 Unforgettable Story",
+  },
+];
